@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -19,6 +20,15 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    publish {
+        userOrg = rootProject.userOrg //bintray账户下某个组织id
+        groupId = rootProject.groupId //maven仓库下库的包名，一般为模块包名
+        artifactId = 'maven-lib-bintray-release-artifaceid' //项目名称
+        uploadName = rootProject.uploadName
+        publishVersion = rootProject.publishVersion //版本号
+        desc = rootProject.desc //项目介绍，可以不写
     }
 
 }
