@@ -32,7 +32,7 @@ ext {
     userOrg = 'jfrog-xuqi-org'
     groupId = 'com.example.mavenlibbintrayrelease'
     uploadName = 'maven-lib-bintray-release'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = '一个普通的描述'
     licences = ['Apache-2.0']
 }

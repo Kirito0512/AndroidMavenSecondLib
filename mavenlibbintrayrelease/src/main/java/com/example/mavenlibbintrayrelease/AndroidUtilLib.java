@@ -9,6 +9,6 @@ public class AndroidUtilLib {
     }
 
     public static String getStringVersion() {
-        return "AndroidUtilLib version 2 getString success";
+        return "AndroidUtilLib version 3 getString success";
     }
 }

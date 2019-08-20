@@ -55,6 +55,7 @@ bintray {
         name = rootProject.uploadName  //需更改，这个名字就是你在Bintray上创建Package的名字，这里会查询，如果此包不存在就会创建一个。
         userOrg = rootProject.userOrg    //组织名称 organization
         vcsUrl = "https://github.com/Kirito0512/AndroidMavenSecondLib.git"
+        websiteUrl = "https://github.com/Kirito0512/AndroidMavenSecondLib"
         licenses = ["Apache-2.0"]
         publish = true
         version {
