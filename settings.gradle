@@ -1,1 +1,1 @@
-include ':app', ':mavenlibbintrayrelease'
+include ':app'//, ':mavenlibbintrayrelease'
