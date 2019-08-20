@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 android {
     compileSdkVersion 28
 
@@ -21,6 +22,46 @@ android {
         }
     }
 
+}
+
+version rootProject.publishVersion
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here
+                description rootProject.desc
+                name 'maven-lib-bintray-release-project-name'  // 可默认，项目描述
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = "kirito0512"
+    key = "a0dce5d1d5924db50505c916cd499ce13826cb10"
+    configurations = ['archives']
+    pkg {
+        repo = "maven"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
+        name = rootProject.uploadName  //需更改，这个名字就是你在Bintray上创建Package的名字，这里会查询，如果此包不存在就会创建一个。
+        userOrg = rootProject.userOrg    //组织名称 organization
+        vcsUrl = "https://github.com/Kirito0512/AndroidMavenSecondLib.git"
+        licenses = ["Apache-2.0"]
+        publish = true
+        version {
+            name = rootProject.publishVersion
+            desc = "version desc"
+        }
+    }
 }
 
 dependencies {

@@ -7,4 +7,8 @@ public class AndroidUtilLib {
     public static String getString() {
         return "AndroidUtilLib getString success";
     }
+
+    public static String getStringVersion() {
+        return "AndroidUtilLib version 2 getString success";
+    }
 }
